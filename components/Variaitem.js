@@ -1,0 +1,29 @@
+import React, {Component} from 'react';
+import {
+  Body, Left,Right,
+  ListItem, CheckBox, Text
+} from 'native-base';
+import propTypes from 'prop-types';
+
+export default class Variaitem extends Component{
+
+  render(){
+    const {todo: {id, name}} =  this.props;
+
+    return(
+      <ListItem key={id}>
+        <Left>
+          <CheckBox checked={false}/>
+        </Left>
+        <Body>
+          <Text>{name}</Text>
+        </Body>
+        <Right/>
+      </ListItem>
+    )
+  }
+}
+
+Variaitem.propTypes = {
+  todo: propTypes.object.isRequired
+}
